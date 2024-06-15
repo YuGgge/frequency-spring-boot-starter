@@ -1,5 +1,6 @@
 package com.zhang.core;
 
+import com.zhang.core.strategy.StrategyType;
 import lombok.*;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.NestedConfigurationProperty;
@@ -34,7 +35,10 @@ public class ControlProperties {
      */
     @NestedConfigurationProperty
     private ControlRule controlRule = new ControlRule().init();
-
+    /**
+     * 策略类型
+     */
+    public StrategyType strategyType;
     public ControlProperties(boolean enabled) {
         this.enabled = enabled;
     }
